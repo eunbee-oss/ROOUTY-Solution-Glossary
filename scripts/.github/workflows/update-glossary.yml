@@ -1,0 +1,43 @@
+# .github/workflows/update-glossary.yml
+# 소스 코드가 main에 push될 때마다 용어집을 자동 재생성해서 커밋합니다.
+name: 용어집 자동 갱신
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "**/locales/**"
+      - "**/i18n/**"
+      - "scripts/extract-glossary.mjs"
+  workflow_dispatch: {} # 수동 실행도 가능
+
+permissions:
+  contents: write
+
+jobs:
+  update-glossary:
+    runs-on: ubuntu-latest
+    # 봇 커밋이 다시 트리거되는 무한루프 방지
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 용어집 생성
+        run: node scripts/extract-glossary.mjs .
+
+      - name: 변경사항 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add glossary/
+          if git diff --cached --quiet; then
+            echo "용어집 변경 없음"
+          else
+            git commit -m "chore: 용어집 자동 갱신 [skip ci]"
+            git push
+          fi
