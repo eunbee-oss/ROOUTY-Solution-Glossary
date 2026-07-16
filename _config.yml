@@ -1,0 +1,11 @@
+title: ROOUTY Solution Glossary
+description: Official glossary of terms used in ROOUTY, WeMeet Mobility's route optimization solution
+theme: jekyll-theme-cayman
+lang: ko
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+exclude:
+  - scripts/
