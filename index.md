@@ -1,3 +1,8 @@
+---
+title: 홈
+nav_order: 1
+---
+
 # ROOUTY Solution Glossary
 
 Official glossary of terms used in ROOUTY, WeMeet Mobility's route optimization solution.
