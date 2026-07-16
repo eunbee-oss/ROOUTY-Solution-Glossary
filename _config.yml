@@ -1,11 +1,17 @@
 title: ROOUTY Solution Glossary
 description: Official glossary of terms used in ROOUTY, WeMeet Mobility's route optimization solution
-theme: jekyll-theme-cayman
-lang: ko
+remote_theme: just-the-docs/just-the-docs
 plugins:
+  - jekyll-remote-theme
   - jekyll-relative-links
 relative_links:
   enabled: true
   collections: true
 exclude:
   - scripts/
+search_enabled: true
+heading_anchors: true
+aux_links:
+  GitHub 저장소:
+    - https://github.com/eunbee-oss/ROOUTY-Solution-Glossary
+footer_content: "© WeMeet Mobility. All rights reserved."
