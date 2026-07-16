@@ -55,3 +55,15 @@ nav_order: 5
 | 컬럼 | 상태 | Status | 차량 활성 상태 (활성/비활성) |
 | 컬럼 | 운영 유형 | Operation Type | 고정차 / 지입차 / 고정용차 / 용차 |
 | 컬럼 | 용적량1 | Capacity 1 | 차량의 최대 용적량 (기준 1) |
+
+## 실적 대시보드 (참고)
+
+핸드북 기준으로, 주행 기록 외에 **실적을 차트로 집계해 보는 대시보드**가 있습니다 (`/manage/report/dispatch` · `/manage/report/order`, 매니저 등급 이상 접근 · 플랜에 따라 노출이 다를 수 있음).
+
+| 구분 | 용어 | English | 정의 |
+|---|---|---|---|
+| 메뉴 | 배차 실적 대시보드 | Dispatch Performance Dashboard | 배차 실적 요약·차량 사용률·추이 차트를 제공 |
+| 메뉴 | 주문 실적 대시보드 | Order Performance Dashboard | 주문 실적을 기간·팀 기준으로 집계 |
+| 표시 | 차량 사용률 | Vehicle Utilization | 보유 차량 대비 실제 배차된 차량 비율 (도넛 차트) |
+| 필터 | 기간 · 팀 필터 | Period / Team Filter | 대시보드 상단에서 기간 프리셋과 팀을 선택 |
+| 버튼 | 차트별 엑셀 다운로드 | Export per Chart | 각 차트의 데이터를 엑셀로 내려받기 |
